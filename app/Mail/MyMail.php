@@ -7,18 +7,23 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class Mail extends Mailable
+class MyMail extends Mailable implements ShouldQueue
 {
     use Queueable, SerializesModels;
+
+    public $mail;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+
+
+
+    public function __construct($mail)
     {
-        //
+        $this->mail = $mail;
     }
 
     /**

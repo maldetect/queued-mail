@@ -3,7 +3,7 @@
 
 The body of your message.
 
-{{ $mail->body }}
+{{ $mail['body'] }}
 
 Thanks,<br>
 {{ config('app.name') }}
