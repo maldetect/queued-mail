@@ -41,7 +41,7 @@ class MailController extends Controller
             'mail.*.subject' => 'required|string',
             'mail.*.body' => 'required|string',
             'mail.*.attachments' => 'nullable|array',
-            'mail.*.attachments.*.base64' => 'required_with:mail.*.attachments',
+            'mail.*.attachments.*.base64' => 'required_with:mail.*.attachments|base64',
             'mail.*.attachments.*.filename' => 'required_with:mail.*.attachments',
             'mail.*.email_address' =>'required|email',
             'api_token'=>'required'
