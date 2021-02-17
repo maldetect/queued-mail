@@ -89,6 +89,10 @@ MAIL_FROM_ADDRESS=youemailaddress<br \>
 
 php artisan test
 
+## Start horizon
+
+php artisan horizon
+
 
 ## Message
 
