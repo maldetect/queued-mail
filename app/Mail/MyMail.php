@@ -33,6 +33,11 @@ class MyMail extends Mailable implements ShouldQueue
      */
     public function build()
     {
-        return $this->markdown('emails.mail');
+        $response = $this->subject($this->mail['subject']);
+        foreach($this->mail['attachments'] as $attachment){
+            $response->attachData(base64_decode($attachment['base64']), $attachment['filename']);
+        }
+        return $response->markdown('emails.mail');
+
     }
 }

@@ -36,8 +36,8 @@ class SendEmail implements ShouldQueue
      */
     public function handle()
     {
-        $recipient = 'holyminds@gmail.com';
-		Mail::to($recipient)->send(new MyMail($this->mail));
-		Log::info('Emailed ');
+        Mail::to($this->mail['email_address'])
+            ->send(new MyMail($this->mail));
+        Log::info('Emailed ');
     }
 }
