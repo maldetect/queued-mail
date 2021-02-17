@@ -60,3 +60,36 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## Clone project
+
+git clone https://github.com/maldetect/queued-mail.git
+
+## Install dependencies
+
+composer install 
+
+## SMTP Settings
+
+Create account at mailtrap to test this project
+
+
+Edit .env <br \>
+
+
+MAIL_MAILER=smtp<br \>
+MAIL_HOST=smtp.mailtrap.io<br \>
+MAIL_PORT=2525<br \>
+MAIL_USERNAME=yourusername<br \>
+MAIL_PASSWORD=yourpassword<br \>
+MAIL_ENCRYPTION=tls<br \>
+MAIL_FROM_ADDRESS=youemailaddress<br \>
+
+## Running unit test
+
+php artisan test
+
+
+## Message
+
+I hope you enjoy it
