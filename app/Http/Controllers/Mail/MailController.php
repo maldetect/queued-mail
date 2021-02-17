@@ -12,24 +12,7 @@ use Log;
 
 class MailController extends Controller
 {
-    /**
-     * Expect json
-     * {
-     * "mail": [
-     *   {
-     *       "subject": "subject1",
-     *       "body": "body1",
-     *       "attachments": [
-     *           {
-     *              "base64": "iVBORw"
-     *               "filename": "filename.png"
-     *           }
-     *       ],
-     *       "email_address": "mail@teste.com"
-     *   }
-     * ]
-     *}
-     */
+
     public function send(Request $request)
     {
 
@@ -68,11 +51,11 @@ class MailController extends Controller
         foreach ($mails['mail'] as $key => $mail){
             SendEmail::dispatch($mail)->onQueue('email');;
 
-            Log::info('Dispatched mail ' . $key);
+            Log::info('Dispatched emails ' . $key);
         }
 
 
-        return 'Dispatched mails ';
+        return response()->json(['success'=>'true','message'=>'Dispatched emails']);
     }
 
     private function verifyToken($token){
