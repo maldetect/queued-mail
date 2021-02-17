@@ -20,3 +20,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::post('/send',[MailController::class,'send'])->name('send');
+Route::get('/list',[MailController::class,'list'])->name('list');

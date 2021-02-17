@@ -128,4 +128,17 @@ class MyMailTest extends TestCase
 
     ],'success'=>'false']);
     }
+
+    public function test_list_jobs()
+    {
+
+        $response = $this->get('/api/list');
+
+        $response->assertStatus(200);
+        $response->assertJsonStructure([
+            'completed' ,  'pending'
+        ]);
+    }
+
+
 }
